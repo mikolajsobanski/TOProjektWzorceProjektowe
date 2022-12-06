@@ -10,7 +10,7 @@
 
 2,3-
 
-  1. Konstruowany jest obiekt Klient, typ Klienta (zwykły/VIP/admin) decyduje o obiektcie z wykorzystaniem BUDOWNICZEGO
+  1. Konstruowany jest obiekt Klient, typ Klienta (zwykły/VIP/admin) decyduje o obiekcie z wykorzystaniem BUDOWNICZEGO
 
   2. Klient dodaje siebie do Kolejki, będącej SINGLETONEM (jeśli nie isntieje to najpierw jest tworzona)
 
