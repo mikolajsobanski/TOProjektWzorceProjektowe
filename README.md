@@ -6,20 +6,22 @@
 --------------------------------------
 1 -
 
-  Biblioteka internetowa
+  Projekt będzie symulował działanie biblioteki internetowej, przy ograniczonym tempie wykonywania operacji, mogącym spowodować konieczność zakolejkowania i poprawnego obsłużenia wielu klientów.
 
 2,3-
 
-  1. Konstruowany jest obiekt Klient, typ Klienta (zwykły/VIP/admin) decyduje o obiekcie z wykorzystaniem BUDOWNICZEGO
+  1. Budowniczy -- klienci konstruowani na podstawie żądań mogą mieć różne uprawnienia, odpowiedni klienci są konstruowani przez budowniczego. 
 
-  2. Klient dodaje siebie do Kolejki, będącej SINGLETONEM (jeśli nie isntieje to najpierw jest tworzona)
+  2. Singleton -- kolejka do której trafiają żądania klientów jest singletonem. Każde żądanie próbuje najpierw stworzyć kolejkę, ale jeśli Kolejka już istnieje, to tylko podłącza się do niej.
 
-  3. Kolejka powoli obsługuje obiekty w sobie, uniwersalna obsługa różnego typu obiektów zapewniona przez DEKORATORY
+  3. Dekorator -- żądania klientów zawerają jedynie podstawowe informacje, niewystarczające do pełnego działania kolejki. Dodatkowe pole i/lub metody dodawane są poprzez dekorator.
+  
+  4. Kompozyt -- aby móc mieć dostęp do wszystkich żądań (oraz np. grup żądań), cała zawartość kolejki zawiera się w kompozycie dostarczającym metod do pracy na wszystkich żądaniach jednocześnie.
+  
+  5. Iterator -- po żądaniach w kolejce porusza się iterator.
 
-  4. W przypadku gdy spełniony jest dany warunek (np. pełna kolejka lub brak jakiegoś zasobu), Kolejka zgłasza to do KOMPOZYTU z wszystkich Klientów przez ITERATOR '
+  6. Pamiątka -- obsłużone żądania oraz dane kolejki zapisywane są w pamiątce, dzięki czemu kolejka może być usuwana i przywracana w zależności od tego, czy jest potrzeba obsłużenia żądań klientów (kolejka usuwa się po wykonaniu wszystkich poleceń).
 
-  5. Jeśli Kolejka skończy wszystko obsługiwać, to zapisuje efekty swojej pracy w PAMIĄTCE, a następnie się usuwa
-
-  6. Klient posługuje sie menu, do którego wykorzystywany jest wzorzec COMMAND
+  7. Polecenie -- zgodnie z wzorcem polecenie, wszystkie wymienione wyżej żądania klientów zostają zamienione w obiekty aby można było je kolejkować i przesyłać jako argumenty funkji. 
 
 ```
