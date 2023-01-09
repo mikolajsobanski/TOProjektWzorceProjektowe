@@ -20,8 +20,6 @@
   
   5. Iterator -- po żądaniach w kolejce porusza się iterator.
 
-  6. Pamiątka -- obsłużone żądania oraz dane kolejki zapisywane są w pamiątce, dzięki czemu kolejka może być usuwana i przywracana w zależności od tego, czy jest potrzeba obsłużenia żądań klientów (kolejka usuwa się po wykonaniu wszystkich poleceń).
-
-  7. Polecenie -- zgodnie z wzorcem polecenie, wszystkie wymienione wyżej żądania klientów zostają zamienione w obiekty aby można było je kolejkować i przesyłać jako argumenty funkji. 
+  6. Polecenie -- zgodnie z wzorcem polecenie, wszystkie wymienione wyżej żądania klientów zostają zamienione w obiekty aby można było je kolejkować i przesyłać jako argumenty funkji. 
 
 ```
