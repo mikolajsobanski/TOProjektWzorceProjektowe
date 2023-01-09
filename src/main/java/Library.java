@@ -2,7 +2,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Librarian {
+public class Library {
+
+    private static Library instance = null;
+
+    public static synchronized Library getInstance() {
+        if (instance == null) {
+            instance = new Library();
+        }
+        return instance;
+    }
 
     //List of books by id, possibly replace with something better later?
     private List<Integer> availableBooks = new ArrayList<>(Arrays.asList(1,2,3,4));

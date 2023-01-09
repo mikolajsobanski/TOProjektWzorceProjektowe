@@ -1,14 +1,14 @@
 public class RequestBooleanBookOperation implements BooleanBookOperation {
-    private Librarian librarian;
+    private Library library;
     private Integer requestedId;
 
     @Override
     public Boolean execute() {
-        return librarian.requestBook(requestedId);
+        return library.requestBook(requestedId);
     }
 
-    RequestBooleanBookOperation(Librarian librarian, Integer book) {
-        this.librarian = librarian;
+    RequestBooleanBookOperation(Library library, Integer book) {
+        this.library = library;
         this.requestedId = book;
     }
 }
