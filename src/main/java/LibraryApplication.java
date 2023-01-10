@@ -6,13 +6,21 @@ public class LibraryApplication {
 
     public static void main(String[] args) {
         Library library = new Library();
-        Client firstClient = new Client("Test", 3);
-        Client secondClient = new Client("Nane", 2);
+        AdminClient firstClient = new AdminClient("Test", 3);
+        
+        firstClient.indebt(secondClient, 3.13);
+        someonesBrother.incurDebt(7.30);
+        secondClient.incurDebt(2);
 
-        //Client third = clientBuilder.build(arg);
-        //clientComposite.add(third);
+        DebtMessenger messenger = new PriorityMessengerDecorator(secondClient);
+        messenger.message();
 
-        //clientComposite.count();
+        for (Customer twoClient : twoClients) {
+            out.println("And another one!");
+        }
+
+        out.println(twoClients.countDebt());
+
 
         for(;;) {
             out.print(
@@ -52,5 +60,12 @@ public class LibraryApplication {
 
             //
         }
+
+
+       
+        
+
+       
+
     }
 }
