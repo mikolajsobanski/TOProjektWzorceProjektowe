@@ -1,7 +1,7 @@
 public class AdminClient extends Client {
 
-    public AdminClient(String name) {
-        super(name);
+    public AdminClient(String name, String city, String phoneNumber, String email) {
+        super(name, city, phoneNumber, email);
         isAdmin = true;
     }
     @Override

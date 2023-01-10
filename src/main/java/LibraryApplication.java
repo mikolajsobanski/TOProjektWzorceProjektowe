@@ -6,9 +6,9 @@ public class LibraryApplication {
 
     public static void main(String[] args) {
         Library library = new Library();
-        AdminClient firstClient = new AdminClient("Test");
-        Client secondClient = new Client("Name");
-        Client someonesBrother = new Client("Brother");
+        AdminClient firstClient = new AdminClientBuilder().setName("Test").setEmail("lib.admin@libmail.com").setPhoneNumber("555-444-333").createAdminClient();
+        Client secondClient = new ClientBuilder().setName("Name").setEmail("example@email.com").createClient();
+        Client someonesBrother = new ClientBuilder().setName("Brother").setCity("Cracow").createClient();
         ClientComposite twoClients = new ClientComposite(secondClient, someonesBrother);
         firstClient.indebt(secondClient, 3.13);
         someonesBrother.incurDebt(7.30);
@@ -17,7 +17,7 @@ public class LibraryApplication {
         out.println("Pass your name");
         Scanner scanners = new Scanner(System.in);
         String choices = scanners.nextLine();
-        Client newClient = new Client(choices);
+        Client newClient = new ClientBuilder().setName(choices).createClient();
         ClientComposite clients = new ClientComposite(twoClients,newClient);
 
 
