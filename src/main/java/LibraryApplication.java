@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 import static java.lang.System.out;
 
 public class LibraryApplication {
@@ -12,15 +14,43 @@ public class LibraryApplication {
 
         //clientComposite.count();
 
-        RequestBooleanBookOperation requestBooleanBookOperation = new RequestBooleanBookOperation(library,2);
-        requestBooleanBookOperation.execute();
+        for(;;) {
+            out.print(
+                    "-------MENU------\n" +
+                            "L - Lend book\n" +
+                            "R - Return book\n" +
+                            "S  - Show books\n" +
+                            "E - Exit\n" +
+                            "----------\n");
 
-        out.println(library.totoString());
+            Scanner scanner = new Scanner(System.in);
+            String choice = scanner.nextLine();
 
-        //menu with three options:
-        //request
-        //return
-        //exit
+            switch (choice){
+                case "L":
+                case "l":
 
+                    RequestBooleanBookOperation requestBooleanBookOperation = new RequestBooleanBookOperation(library);
+                    requestBooleanBookOperation.execute();
+                    break;
+                case "S":
+                case "s":
+                    RequestShowAllBooks showAllBooks = new RequestShowAllBooks(library);
+                    showAllBooks.execute();
+                    break;
+                case "R":
+                case "r":
+
+                    RequestReturnBook requestReturnBook = new RequestReturnBook(library);
+                    requestReturnBook.execute();
+                    break;
+                case "E":
+                case "e":
+                    System.exit(0);
+                    break;
+            }
+
+            //
+        }
     }
 }
