@@ -3,15 +3,13 @@ public class Client implements Customer, DebtMessenger{
     protected int id;
     protected static int idCount = 0;
     protected Boolean isAdmin;
-    protected int bookRequestId;
     protected double totalDebt = 0;
     //TODO: add whatever other parameters might be necessary
 
     //TODO: make a Factory or a Builder for Clients
-    public Client(String name, int bookId) {
+    public Client(String name) {
         this.name = name;
         this.id = idCount++;
-        this.bookRequestId = bookId;
         this.isAdmin = false;
     }
 
@@ -27,6 +25,9 @@ public class Client implements Customer, DebtMessenger{
 
     public void incurDebt(double newDebt) {
         totalDebt += newDebt;
+    }
+    public void reduceDebt(double newDebt) {
+        totalDebt -= newDebt;
     }
     @Override
     public double countDebt() {

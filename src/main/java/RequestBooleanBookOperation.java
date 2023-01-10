@@ -12,7 +12,6 @@ public class RequestBooleanBookOperation implements Command {
     }
     @Override
     public void execute() {
-
         System.out.println("Podaj id ksiazki");
         Scanner scanner = new Scanner(System.in);
         String wybor = scanner.nextLine();
