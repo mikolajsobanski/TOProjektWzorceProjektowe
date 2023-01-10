@@ -24,6 +24,10 @@ public class LibraryApplication {
         DebtMessenger messenger = new PriorityMessengerDecorator(secondClient);
         messenger.message();
 
+        for (Customer twoClient : twoClients) {
+            out.println("And another one!");
+        }
+
         out.println(twoClients.countDebt());
         out.println(library.totoString());
 
