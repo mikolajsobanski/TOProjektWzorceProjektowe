@@ -1,14 +1,23 @@
-public class RequestBooleanBookOperation implements BooleanBookOperation {
+import java.util.Scanner;
+
+public class RequestBooleanBookOperation implements Command {
     private Library library;
-    private Integer requestedId;
 
-    @Override
-    public Boolean execute() {
-        return library.requestBook(requestedId);
-    }
 
-    RequestBooleanBookOperation(Library library, Integer book) {
+
+
+    public RequestBooleanBookOperation(Library library) {
         this.library = library;
-        this.requestedId = book;
+
+    }
+    @Override
+    public void execute() {
+
+        System.out.println("Podaj id ksiazki");
+        Scanner scanner = new Scanner(System.in);
+        String wybor = scanner.nextLine();
+        int i=Integer.parseInt(wybor);
+
+        library.requestBook(i);
     }
 }
