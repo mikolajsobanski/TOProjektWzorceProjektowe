@@ -6,20 +6,20 @@
 --------------------------------------
 1 -
 
-  Projekt będzie symulował działanie biblioteki internetowej, przy ograniczonym tempie wykonywania operacji, mogącym spowodować konieczność zakolejkowania i poprawnego obsłużenia wielu klientów.
+  Projekt będzie symulował działanie biblioteki internetowej, z której może korzystać wielu klientów.
 
 2,3-
 
-  1. Budowniczy -- klienci konstruowani na podstawie żądań mogą mieć różne uprawnienia, odpowiedni klienci są konstruowani przez budowniczego. 
+  1. Budowniczy -- Klienci są konstruowani przez budowniczego. 
 
-  2. Singleton -- kolejka do której trafiają żądania klientów jest singletonem. Każde żądanie próbuje najpierw stworzyć kolejkę, ale jeśli Kolejka już istnieje, to tylko podłącza się do niej.
+  2. Singleton -- Singleton gwarantuje, że występuje tylko jedna Biblioteka.
 
-  3. Dekorator -- żądania klientów zawerają jedynie podstawowe informacje, niewystarczające do pełnego działania kolejki. Dodatkowe pole i/lub metody dodawane są poprzez dekorator.
+  3. Dekorator -- Wiadomości przekazywane do klientów mogą być (np. w zależności od priorytetu) przekazywane przez dekorator.
   
-  4. Kompozyt -- aby móc mieć dostęp do wszystkich żądań (oraz np. grup żądań), cała zawartość kolejki zawiera się w kompozycie dostarczającym metod do pracy na wszystkich żądaniach jednocześnie.
+  4. Kompozyt -- aby móc mieć dostęp do wszystkich klientów (oraz grup klientów), klienci zawierają się w kompozycie dostarczającym metod do pracy na wszystkich klientach jednocześnie.
   
-  5. Iterator -- po żądaniach w kolejce porusza się iterator.
+  5. Iterator -- po klientach w kompozycie porusza się iterator.
 
-  6. Polecenie -- zgodnie z wzorcem polecenie, wszystkie wymienione wyżej żądania klientów zostają zamienione w obiekty aby można było je kolejkować i przesyłać jako argumenty funkji. 
+  6. Polecenie -- zgodnie z wzorcem polecenie, żądania klientów zostają zamienione w obiekty zgodnie z wzorcem Polecenie. 
 
 ```
