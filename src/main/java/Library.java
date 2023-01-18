@@ -16,8 +16,11 @@ public class Library implements BookOperation {
 
     //List of books by id, possibly replace with something better later?
 
-    private List<Book> books = new ArrayList<>(Arrays.asList(new Book(1,"Harry Potter komnata tajemnic","J.K.Rowling"),new Book(2,"Harry Potter kamien filozoficzny","J.K.Rowling")));
+    private List<Book> books = new ArrayList<>(Arrays.asList(new Book(1,"Harry Potter i kamien filozoficzny","J.K.Rowling"),new Book(2,"Harry Potter i komnata tajemnic","J.K.Rowling"),new Book(3,"Harry Potter i więzień Azkabanu","J.K.Rowling"),new Book(4,"Harry Potter i Czara Ognia","J.K.Rowling")));
 
+    List<Book> getBooks(){
+        return books;
+    }
 
     //TODO: All book operations should be logged into a memento for save/undo
 
