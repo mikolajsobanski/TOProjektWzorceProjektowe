@@ -7,9 +7,6 @@ public class Client implements Customer, DebtMessenger{
     protected String city;
     protected String phoneNumber;
     protected String email;
-    //TODO: add whatever other parameters might be necessary
-
-    //TODO: make a Factory or a Builder for Clients
     public Client(String name, String city, String phoneNumber, String email) {
         this.name = name;
         this.id = idCount++;
@@ -24,6 +21,9 @@ public class Client implements Customer, DebtMessenger{
     }
     public int getId() {
         return id;
+    }
+    public static void setIdCount(int id) {
+        idCount = id;
     }
     public Boolean getAdmin() {
         return false;

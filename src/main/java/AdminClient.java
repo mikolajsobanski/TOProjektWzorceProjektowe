@@ -11,9 +11,14 @@ public class AdminClient extends Client {
         }
         return (totalDebt - 10.0);
     }
+
+    @Override
+    public double getTotalDebt() {
+        return totalDebt;
+    }
+
     void indebt(Client client, double penalty) {
         client.incurDebt(penalty);
     }
-    //TODO: Maybe give the admins additional methods or fields?
 
 }
